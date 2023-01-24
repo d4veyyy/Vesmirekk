@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vesmírné pozadí :3</title>
+
+/*liknul jsem font textu, který jsem použil u podpisu*/
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+/* css styly (vypsal jsem to do indexu místo style.css, ovšem při větším množství bych to dal samostatně */
+<style>
+:root{
+margin: 0;        /*okraj na 0*/
+padding: 0;           /*výplň 0*/
+font-family: arial, monospace;  /* zvolení fontu */
+
+}
+
+*{
+box-sizing: border-box;  /*velikost boxu*/
+}
+
+html, body{
+height: 100%;             /* výška stránky */
+background-color: black;       /*pozadí stránky*/
+}
+
+body{
+background: url("./../img/6/particles-galaxy-background/pexels-philippe-donn-1169754.jpg");   /* vložený odkaz z videa, který obsahuje particly*/
+background-position: center;                                                                  /* pozice pozadí */
+background-repeat: no-repeat;                                                                 /* opakování pozadí zamítnuto */
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;                 /* korygování výšky */
+background-size: cover;
+
+overflow: hidden;               /* přetékání schované */
+}
+
+
+#background {
+position: absolute;       
+display: block;
+top: 0;
+left: 0;                  /* nastavení umístění pozadí */
+z-index: 0;
+width: 100%;
+height: 100%;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="background"></div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+
+/*
+
+Partikly galaxie pozadí používají lightweight library particles.js s interaktivitou myši
+
+*/
+const config = {
+"particles": {     /* nastavení samotných partiklů */
+"number": {
+"value": 200,
+"density": {
+"enable": true,
+"value_area": 800
+}
+},
+"color": {
+"value": ["#FFFFFF", "#c78f6c", "#5a5261", "#597ca4", "#f9c1aa", "#514c82"]
+},
+"shape": {
+"type": "circle",
+"stroke": {
+"width": 0,
+"color": "#000000"
+},
+"polygon": {
+"nb_sides": 5
+},
+
+},
+"opacity": {   /* nastavení neprůhlednosti */
+"value": 0.5,
+"random": false,
+"anim": {
+"enable": false,
+"speed": 1,
+"opacity_min": 0.1,
+"sync": false
+}
+},
+"size": {
+"value": 3,
+"random": true,
+"anim": {
+"enable": false,
+"speed": 20,
+"size_min": 0.1,
+"sync": false
+}
+},
+"line_linked": {   /* propojenost */
+"enable": false,
+"distance": 300,
+"color": "#ffffff",
+"opacity": 0.4,
+"width": 2
+},
+"move": {
+"enable": true,
+"speed": 3,
+"direction": "none",
+"random": false,
+"straight": false,
+"out_mode": "out",
+"bounce": false,
+"attract": {
+"enable": false,
+"rotateX": 600,
+"rotateY": 1200
+}
+}
+},
+"interactivity": {   /* nastavení interactivity */
+"detect_on": "canvas",
+"events": {
+"onhover": {
+"enable": true,
+"mode": "repulse"
+},
+"onclick": {          
+"enable": true,
+"mode": "push"
+},
+"resize": true
+},
+"modes": {
+"grab": {
+"distance": 800,
+"line_linked": {
+"opacity": 1
+}
+},
+"bubble": {    /* nastavení bubliny */
+"distance": 800,
+"size": 80,
+"duration": 2,
+"opacity": 0.8,
+"speed": 3
+},
+"repulse": {             /* nastavení odrazu */
+"distance": 400,
+"duration": 0.4
+},
+"push": {
+"particles_nb": 4
+},
+"remove": {
+"particles_nb": 2
+}
+}
+},
+"retina_detect": true
+}
+
+window.onload = function() {
+
+// pozadí je ID prvku dom
+particlesJS("background", config);
+};
+
+</script>
+</body>
